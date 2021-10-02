@@ -1,4 +1,5 @@
 <h1>Create New User</h1>
+<h1>Form 1(HTML Form)<h1>
 <form method="Post" action="/users" accept-charset="UTF-8" >
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <div>
@@ -18,7 +19,7 @@
     </div>
 </form>
 
-<h1>Form Two</h1>
+<h1>Form 2(Railsy Form with #form_tag)</h1>
 <%= form_tag("/users") do%>
     <div>
         <%= label_tag('user[username]','Username') %>
@@ -34,5 +35,24 @@
     </div>
     <div>
         <%= submit_tag('Create User') %>
+    </div>
+<% end %>
+
+<h1>Form 3(Railsy-er Form with #form_with)</h1>
+<%= form_with(model:@user,local:true) do |f| %>
+    <div>
+        <%= f.label(:username) %>
+        <%= f.text_field(:username) %>
+    </div>
+    <div>
+        <%= f.label(:email) %>
+        <%= f.email_field(:email) %>
+    </div>
+    <div>
+        <%= f.label(:password) %>
+        <%= f.password_field(:password) %>
+    </div>
+    <div>
+        <%= f.submit %>
     </div>
 <% end %>
