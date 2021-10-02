@@ -17,3 +17,22 @@
         <input type="submit" value="Create User">
     </div>
 </form>
+
+<h1>Form Two</h1>
+<%= form_tag("/users") do%>
+    <div>
+        <%= label_tag('user[username]','Username') %>
+        <%= text_field_tag('user[username]') %>
+    </div>
+    <div>
+        <%= label_tag('user[email]','Email') %>
+        <%= email_field_tag('user[email]') %>
+    </div>
+    <div>
+        <%= label_tag('user[password]','Password') %>
+        <%= password_field_tag('user[password]') %>
+    </div>
+    <div>
+        <%= submit_tag('Create User') %>
+    </div>
+<% end %>
