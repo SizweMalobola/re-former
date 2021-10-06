@@ -1,4 +1,9 @@
 <h1>Create New User</h1>
+
+<%= render 'form' %>
+
+<% if false %>
+
 <h1>Form 1(HTML Form)<h1>
 <form method="Post" action="/users" accept-charset="UTF-8" >
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -56,3 +61,6 @@
         <%= f.submit %>
     </div>
 <% end %>
+
+<% end %>
+
